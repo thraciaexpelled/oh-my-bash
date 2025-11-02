@@ -14,8 +14,10 @@ DATE_FMT='+%Y%m%d-%H%M%S'
 DEFAULT_BACKUP_DIR=~/.oh-my-bash
 
 function list_all_bash_files {
+    local old_func+=$CURRENT_FUNC
     CURRENT_FUNC="omb::backup::static.list_all_bash_files"
     find ~ -maxdepth 1 -name "*bash*" | grep -v ".oh-my-bash"
+    CURRENT_FUNC=$old_func
 }
 
 function get_latest_backup_index {
@@ -32,6 +34,7 @@ function get_latest_backup_index {
 }
 
 function create_indexed_backup_dir {
+    local old_func+=$CURRENT_FUNC
     CURRENT_FUNC="omb::backup::static.create_indexed_backup_dir"
 
     local latest_index=$(get_latest_backup_index)
@@ -39,9 +42,11 @@ function create_indexed_backup_dir {
     local new_backup_dir="$DEFAULT_BACKUP_DIR/.omb-backup_$(date $DATE_FMT)-$new_index"
     run_command mkdir -p "$new_backup_dir"
     echo "$new_backup_dir"
+    CURRENT_FUNC=$old_func
 }
 
 function start_backup {
+    local old_func+=$CURRENT_FUNC
     CURRENT_FUNC="omb::backup::start_backup"
 
     local backup_dir=$(create_indexed_backup_dir)
@@ -80,4 +85,5 @@ function start_backup {
     done
 
     ok "backed up $files_backed_up files"
+    CURRENT_FUNC=$old_func
 }
