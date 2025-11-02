@@ -79,20 +79,17 @@ function main {
         ;;
 
         "backup" | "b" | "-b" | "--backup")
-            local backup_directory=""
-            local backup_file_prefix=""
-
             case "$2" in
                 "-h" | "--help")
                     print_help_backup
                     return 0
                 ;;
-                "-d" | "--backup-directory")
-                    [[ -z "$3" ]] && backup_directory="$3"
+                *)
+                    warn "Options for command '$1' has been deprecated since v0.1.0"
                 ;;
             esac
 
-            start_backup "$backup_directory" "$backup_file_prefix"
+            start_backup
             return 0
         ;;
         "version" | "v" | "-v" | "--version")

@@ -9,7 +9,7 @@ SRC_PATH=$(dirname "${BASH_SOURCE[0]}")
 
 source "$SRC_PATH/color.bash"
 
-VERSION="0.1.0"
+VERSION="0.9.0"
 PROGRAM_NAME=$(basename $0)
 
 function print_help {
@@ -41,10 +41,10 @@ function print_help_backup {
     printf "Backs up seemingly bash related files to %s\n\n" "$(color_fg "$HOME/.oh-my-bash" yellow)"
     printf "Options: %s\n\n" "$(color_fg "psst.. all options can be passed as either '-o', or '--opt'" gray)"
 
-    printf "\t%s\n" "$(bolden "$PROGRAM_NAME backup [-d, --backup-directory] [BACKUP_DIRECTORY]")"
-    printf "\tSet directory for files to be backed up to (default: %s/.oh-my-bash)\n\n" "$HOME"
+    printf "\t%s\n" "$(color_fg "Options are now deprecated!" yellow)"
+    printf_wrap "\tAs of version %s, you no longer have the option to choose which directory you backup your files to.\n\n" "$(bolden "0.9.0")"
 
-    printf_wrap "%s: As of version %s, all backups have to be %s. Restoration process will be implemented as soon as possible.\n\n" "$(color_fg "Note" yellow)" "$(bolden "$VERSION")" "$(bolden "Restored manually.")"
+    printf_wrap "%s: Since version %s, all backups have to be %s. Restoration process will be implemented as soon as possible.\n\n" "$(color_fg "Note" yellow)" "$(bolden "0.1.0")" "$(bolden "Restored manually.")"
 
     printf_wrap "%s is an assortment of shell scripts for the Bourne-Again Shell that is written in the hopes it will be useful to those who wish to use it on their systems.\n\n" "$(color_fg "oh-my-bash" yellow)"
     printf_wrap "%s comes with absolutely no warranty and is not responsible for any loss of data or any form of liability under the terms of the MIT License.\n\n" "$(color_fg "oh-my-bash" yellow)"

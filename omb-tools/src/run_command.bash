@@ -23,6 +23,7 @@ function run_command {
 
     if [[ $exit_code != 0 ]]; then
         error "command '$*' failed with exit code $exit_code: $output"
+        exit 1
     fi
 }
 
