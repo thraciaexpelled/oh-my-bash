@@ -39,7 +39,12 @@ function main {
 
                     theme_name=$3
                     theme_set "$theme_name"
-                    return 1
+                    return 0
+                ;;
+
+                "--unset" | "-u")
+                    theme_unset
+                    return 0
                 ;;
 
                 "--preview" | "-p")

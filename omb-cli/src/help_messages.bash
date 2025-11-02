@@ -9,7 +9,7 @@ SRC_PATH=$(dirname "${BASH_SOURCE[0]}")
 
 source "$SRC_PATH/color.bash"
 
-VERSION="0.9.0"
+VERSION="0.9.1"
 PROGRAM_NAME=$(basename $0)
 
 function print_help {
@@ -58,6 +58,9 @@ function print_help_theme {
 
     printf "\t%s\n" "$(bolden "$PROGRAM_NAME theme [-s, --set] [THEME_NAME]")"
     printf "\tSet a theme of name THEME_NAME\n\n"
+
+    printf "\t%s\n" "$(bolden "$PROGRAM_NAME theme [-u, --unset]")"
+    printf "\tUnset current theme\n\n"
 
     printf "\t%s\n" "$(bolden "$PROGRAM_NAME theme [-p, --preview] [THEME_NAME]")"
     printf "\tPreview a theme of name THEME_NAME\n\n"
