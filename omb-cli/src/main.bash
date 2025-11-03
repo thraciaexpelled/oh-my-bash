@@ -60,8 +60,8 @@ function main {
                 ;;
 
                 "--list" | "-l")
-                    error "not implemented yet"
-                    return 1
+                    theme_list
+                    return 0
                 ;;
 
                 "--remove" | "-r")

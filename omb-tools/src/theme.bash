@@ -85,3 +85,24 @@ function theme_unset {
 
     CURRENT_FUNC=$old_func
 }
+
+function theme_list {
+    local old_func+=$CURRENT_FUNC
+    CURRENT_FUNC="omb::theme::theme_list"
+
+    printf "%s:\n" "$(bolden "Local themes")"
+
+    local count=0
+    for theme in "$HOME"/.omb-themes.d/*; do
+        if [[ -e "$theme" ]]; then
+            printf "    %d. %s\n" $count "$(color_fg "$(basename "$theme" ".omb.bash")" yellow)   "
+            ((count++))
+        fi
+    done
+
+    if [[ $count == 0 ]]; then
+        warn "no themes installed locally"
+    fi
+
+    CURRENT_FUNC+=old_func
+}
