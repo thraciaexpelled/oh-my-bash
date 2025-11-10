@@ -10,5 +10,8 @@ build:
 install:
 	. ./install-unix.sh
 
+install_dummy_themes_for_testing:
+	cp -r testing/themes/* ~/.omb-themes.d/
+
 install-msys2:
 	echo "Run make.msys2.bat to install oh-my-bash for MSYS2. make.bat is interactive."

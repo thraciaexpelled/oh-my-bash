@@ -9,7 +9,7 @@ SRC_PATH=$(dirname "${BASH_SOURCE[0]}")
 
 source "$SRC_PATH/color.bash"
 
-VERSION="0.9.2"
+VERSION="0.9.3"
 PROGRAM_NAME=$(basename $0)
 
 function print_help {

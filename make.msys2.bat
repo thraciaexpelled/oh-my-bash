@@ -1,5 +1,7 @@
 rem Copyright (c) 2025 thraciaexpelled on GitHub, All rights reserved
 
+rem THIS BATCH FILE IS NOT FINISHED! DO NOT USE THIS JUST YET!
+
 @echo off
 
 echo At some NT systems, creating symbolic links requires the user to have Administrator rights.

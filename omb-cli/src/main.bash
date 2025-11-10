@@ -27,6 +27,12 @@ function main {
 
     case "$1" in
         "theme" | "t" | "-t" | "--theme")
+            if [ ! -d "$HOME"/.omb-themes.d ]; then
+                info "command 'theme' has been called but $HOME/.omb-themes.d does not exist"
+                info "creating $HOME/.omb-themes.d"
+                mkdir -p "$HOME"/.omb-themes.d
+            fi
+        
             local theme_name=""
 
             case "$2" in
