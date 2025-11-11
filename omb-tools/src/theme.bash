@@ -65,7 +65,7 @@ function theme_set {
     CURRENT_FUNC="omb::theme::theme_set"
 
     local theme_name=$1
-    info "Searching for theme $theme_name in $HOME/.omb-themes.d"
+    info "searching for theme $theme_name in $HOME/.omb-themes.d"
     check_if_theme_exists "$theme_name"
 
     info "backing up before applying theme"
